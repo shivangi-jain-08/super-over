@@ -74,7 +74,7 @@ function strikeButtonClicked(){
             turn=3;
             setTimeout(()=>{
                 gameOver();
-            },10)
+            },20)
         }
         
     }
