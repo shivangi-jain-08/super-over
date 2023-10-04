@@ -70,7 +70,7 @@ function strikeButtonClicked(){
             team2Score += randomValue;
         }
 
-        if(team2Score>team1Score || team1Wicket==2 || team2BallsFaced==6){
+        if(team2Score>team1Score || team2Wicket==2 || team2BallsFaced==6){
             turn=3;
             setTimeout(()=>{
                 gameOver();
