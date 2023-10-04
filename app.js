@@ -14,7 +14,7 @@ var wicketTeam2 = document.querySelector('#wicket-2');
 var strikeAudio = new Audio("http://bit.ly/so-ball-hit");
 var gameOverAudio = new Audio("http://bit.ly/so-crowd-cheer");
 
-//Variables to keep track of game
+//variables to keep track of game
 var team1Score = 0;
 var team2Score = 0;
 var team1Wicket = 0;
@@ -74,7 +74,7 @@ function strikeButtonClicked(){
             turn=3;
             setTimeout(()=>{
                 gameOver();
-            },20)
+            },10)
         }
         
     }
