@@ -39,44 +39,44 @@ function strikeButtonClicked(){
     var randomIndex = Math.floor(random1);
     var randomValue = possibleOutcomes[randomIndex];
 
-    //India Batting
-    if(turn==1){
+
+    if (turn == 1) {
         team1BallsFaced++;
         var ball = document.querySelector(`#team1-balls div:nth-child(${team1BallsFaced})`)
         ball.innerHTML = randomValue;
 
-        // if random value is wicket add 1 to wicket variable else add the random value to scare of team 1
-        if(randomValue=='W'){
+        // If random value is wicket, add 1 to the wicket variable, else add the random value to the score of team 1
+        if (randomValue == 'W') {
             team1Wicket++;
-        }else{
+        } else {
             team1Score += randomValue;
         }
 
-        if(team1BallsFaced==6 || team1Wicket==2){
+        if (team1BallsFaced == 6 || team1Wicket == 2) {
             turn = 2;
+            team1BallsFaced = 0; // Reset balls faced by team 1
         }
     }
 
     // PAK Batting
-    if(turn==2){
+    else if (turn == 2) {
         team2BallsFaced++;
         var ball = document.querySelector(`#team2-balls div:nth-child(${team2BallsFaced})`)
         ball.innerHTML = randomValue;
 
-        // if random value is wicket add 1 to wicket variable else add the random value to scare of team 2
-        if(randomValue=='W'){
+        // If random value is wicket, add 1 to the wicket variable, else add the random value to the score of team 2
+        if (randomValue == 'W') {
             team2Wicket++;
-        }else{
+        } else {
             team2Score += randomValue;
         }
 
-        if(team2Score>team1Score || team2Wicket==2 || team2BallsFaced==6){
-            turn=3;
-            setTimeout(()=>{
+        if (team2Score > team1Score || team2Wicket == 2 || team2BallsFaced == 6) {
+            turn = 3;
+            setTimeout(() => {
                 gameOver();
-            },10)
+            }, 20)
         }
-        
     }
     updateScore()
 }
